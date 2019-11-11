@@ -1,0 +1,6 @@
+For the final project, I would like to work on the following dataset - “the first comprehensive data set on the founding origins, modes of gaining and losing power, ruling tenures, and other characteristics of autocratic ruling parties.” The dataset, created by political science professor Michael K. Miller, covers nearly 500 parties in more than 150 countries between 1940 and 2015. https://sites.google.com/site/mkmtwo/data
+
+I believe with the current upheaval of autocrative regimes around the world, this would be an interesting dataset to visualize the growth and decline of autocratic regimes over the world. With several other variables, I could apply all of the tools I have learned this semester to create an interactive graph. I can use geography and time to create an interactive graph. 
+
+Here is the data dictionary - https://b2998732-a-62cb3a1a-s-sites.googlegroups.com/site/mkmtwo/ARPD-Codebook.pdf?attachauth=ANoY7cqc5p7odrxbGob6dioPoIkiaUG1-V_rxUeoNEkd-h-_FZQRuGU-TWpa66-9VAXjXo86pGn0xT9U9BYhUoBrxS1eDqDCTwn2sda7sFUbd2YpF4PJ8XFZY68OeDR0Tx_ahP7Pjvn0SStOBRtKoBh-HiH5OOdEjdV1Hy7spQPICqF1n3-OdYx9B4ADXj7TEJcHMlzzC5C_PYFKd5Zau1mILYed8gtNIQ%3D%3D&attredirects=0
+
