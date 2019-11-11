@@ -1,0 +1,49 @@
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+
+function dataTable(dt, cols){
+  table = d3.select('#mydata').append('table')
+  thead = table.append('thead')
+  tbody = table.append('tbody')
+  thead.append('tr').selectAll('th').data(cols).enter().append('th').text(function(d){ return d })
+  rows = tbody.selectAll('tr').data(dt).enter().append('tr')
+  cells = rows.selectAll('td').data(function(row){
+    return cols.map(function(col){
+      return { column: col, value: row[col] } })
+  }).enter().append('td').text(function(d){ return d.value })
+  return table;
+}
+
+function cleanDt() {
+  table = d3.select('#mydata').selectAll("table").remove();
+}
+
+function importData(){
+  github = 'https://raw.githubusercontent.com/charleyferrari/CUNY_DATA_608/master/module5/data/presidents.csv'
+  t = d3.csv(github, function(dt){
+    cols = ['Name', 'Height', 'Weight'];
+    dataTable(dt, cols) });
+}
+
+function filterData(){
+  president = document.getElementById('input1').value
+  github = 'https://raw.githubusercontent.com/charleyferrari/CUNY_DATA_608/master/module5/data/presidents.csv'
+  t = d3.csv(github, function(dt){
+    cols = ['Name','Height','Weight'];
+    subset = dt.filter(function(d){ return d.Name.toLowerCase().indexOf(president) !== -1 } );
+    dataTable(subset, cols) });
+}
+
+</script>
+
+<form>
+  <h3>A function to load the presidents.csv data and display the data as an html table</h3>
+  <input type="button" value="Import CSV and Generate Table" onclick="cleanDt(); importData()">
+  <input type="reset" value="Clear" onclick="cleanDt()">
+
+  <h3>A function that will return that presidents height & weight when you type it in.</h3>
+  <input id="input1" type="text" size="20">
+  <input type="button" value="Filter" onclick="cleanDt(); filterData()">
+  <input type="reset" value="Clear" onclick="cleanDt()">
+</form>
+<div id="mydata"></div>

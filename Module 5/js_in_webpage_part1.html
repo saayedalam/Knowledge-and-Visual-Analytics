@@ -1,0 +1,47 @@
+<script type="text/javascript">
+
+function reverse(str){
+  str1 = str.split("").reverse().join("");
+  str2 = str + ' in reverse is ' + str1;
+  return(str2)
+}
+
+function doReverse(){
+  t = document.getElementById("mystring");
+  t.innerHTML = reverse(document.getElementById('input1').value);
+}
+
+function multiply(num){
+  num1 = Array.from(new Array(20), (x,i) => i + 1);
+  num2 = num1.map(x => x * num);
+  num3 = "";
+  for (i = 0; i < num2.length; i++) {
+    if (i % 4 == 0) {
+      num3 += "<tr><td>" + num2[i] + "</td>";
+    } else if (i + 1 % 4 == 0) {
+      num3 += "<td>" + num2[i] + "</td></tr>";
+    } else {
+      num3 += "<td>" + num2[i] + "</td>";
+    }
+  }
+  table = '<table>' + num3 + '</table>';
+  return(table)
+}
+
+function doMultiply(){
+  t = document.getElementById("mynum");
+  t.innerHTML = multiply(document.getElementById('input2').value);
+}
+</script>
+
+<form>
+  <h3>A function to reverse any word that you type in. This can be typed into either an input box or an alert box, and then print the result in a box or on the webpage.</h3>
+  <input id="input1" type="text" size="20">
+  <input type="button" value="Reverse" onClick="doReverse();">
+
+  <h3>A function that takes an input number, and prints a table with the first 20 multiples of the number, in order 5x4</h3>
+  <input id="input2" type="number" size="4">
+  <input type="button" value="Multiples" onClick="doMultiply();">
+</form>
+<div id="mystring"></div>
+<div id="mynum"></div>
